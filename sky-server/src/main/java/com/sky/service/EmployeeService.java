@@ -5,6 +5,7 @@ import com.sky.dto.EmployeeLoginDTO;
 import com.sky.dto.EmployeePageQueryDTO;
 import com.sky.entity.Employee;
 import com.sky.result.PageResult;
+import io.swagger.v3.oas.models.security.SecurityScheme;
 
 public interface EmployeeService {
 
@@ -20,5 +21,18 @@ public interface EmployeeService {
      * @param employeeDTO
      */
     void save(EmployeeDTO employeeDTO);
+
+    /**
+     * 分页查询
+     * @param employeePageQueryDTO
+     * @return
+     */
     PageResult pageQuery(EmployeePageQueryDTO employeePageQueryDTO);
+
+    /**
+     * 启用或禁用员工
+     * @param status
+     * @param id
+     */
+    void startOrStop(Integer status,Long id);
 }
